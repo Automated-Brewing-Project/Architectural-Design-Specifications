@@ -1,7 +1,7 @@
 The digital components layer will consist of 4 devices. The first is a Raspberry
-PI. This will act as the main computer of the system. It will the majority of
-the data both from the server, the UI, and the microcontrollers. The other 3
-components will all be ESP32 microcontrollers, but they will each serve a
+PI. This will act as the main computer of the system. It will the major hub for
+the data both from the server: the UI, and the micro controllers. The other 3
+components will all be ESP32 micro controllers, but they will each serve a
 different purpose. An ESP32 will receive information from a thermometer sensor
 and relay it to the heat control ESP32. Based on what the temperature is, the
 heat control ESP32 will trigger the relay to activate or deactivate the heating
@@ -15,21 +15,21 @@ based on what the message broker instructs it to do.
 \end{figure}
 
 \subsection{Raspberry PI Subsystem}
-The Raspberry PI will host the web server and the MQTT client. The RBP will
-receive information from the web server about what the user inputed via the UI.
-It will then take that information and relay it to the microcontrollers using
-the MQTT protocol. The RBP will then receive sensor data from the
-microcontrollers through MQTT messages and send store the information in the web
-server. 
+The Raspberry PI will host the web server and the MQTT client. The Raspberry PI will
+receive information from the web server about what the user inputted via the UI.
+It will then take that information and relay it to the micro controllers using
+the MQTT protocol. The Raspberry PI will then receive sensor data from the
+micro controllers through MQTT protocol and send the information in the web
+server for storing. 
 
 \subsubsection{Assumptions}
-The RBP will have a power supply. It will remain safe from the elements. It
+The Raspberry PI will have a power supply. It will remain safe from the elements. It
 will be connected to the network. It will have unbroken communication with the
-web server. It will communicate with the microcontrollers through the MQTT protocol.
+web server. It will communicate with the micro controllers through the MQTT protocol.
 
 \subsubsection{Responsibilities}
 It will receive data from the web server to determine how to operate the pump.
-It will instruct the microcontroller to activate or deactivate based on the
+It will instruct the micro-controller to activate or deactivate based on the
 information it receives. It will relay sensor information to the web server so
 that it can be displayed.
 
@@ -47,7 +47,7 @@ that it can be displayed.
 \end{table}
 
 \subsection{Thermometer Sensor Subsytem}
-This microcontroller will monitor data from the thermometer sensor. It will then
+This micro-controller will monitor data from the thermometer sensor. It will then
 relay that information back to the message broker. 
 
 \subsubsection{Assumptions}
@@ -73,7 +73,7 @@ using the MQTT protocol.
 
 \subsection{Heat Control Subsystem}
 The microcontroller will await messages from the message broker. The message
-broker will recieve information from the thermometer ESP32. If the temperature
+broker will receive information from the thermometer ESP32. If the temperature
 is too low, the message broker will send a message to this microcontroller to
 trigger the relay and allow power to flow to the heating element. If the
 temperature gets too high on the heating element, the message broker will tell
