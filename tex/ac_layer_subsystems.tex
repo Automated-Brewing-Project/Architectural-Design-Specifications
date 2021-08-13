@@ -1,8 +1,4 @@
-The Analog components layer contains will contain 6 components. Five of the components will be actively interacting with each other. Being the pumps and heating elements will be controlled by the relays which will be drawing power from the power supply. The thermometer will be interacting with the Digital component and Brew System Vessel Layers.    
-
-
-
-
+The Analog components layer contains 6 components. Five of the components will be actively interacting with each other. Being the pumps and heating elements will be controlled by the relays will be drawing power from the power supply. The thermometer will be interacting with the Digital component and Brew System Vessel Layers.
 
 \begin{figure}[h!]
 	\centering
@@ -15,9 +11,8 @@ The Analog components layer contains will contain 6 components. Five of the comp
 This subsystem is the temperature control subsystem used for managing temperature of the Hot Liquor tank and the Boiling Kettle. The Heating Elements will be managed by a relay that will be receiving control signals from a ESP32. 
 
 
-
 \subsubsection{Assumptions}
-We will be able to effectively manage the temperature of the Brewing system by changing increasing or decreasing temperature of Heating Elements. That is, logic on the digital components will be handling the optimal path to reach a certain temperature and the Relay will simply manage power to Heating Elements.  
+We will be able to effectively manage the temperature of the Brewing system by increasing or decreasing temperature of heating elements. That is, logic on the digital components will be handling the optimal path to reach a certain temperature and the Relay will simply manage power to Heating Elements.  
 
 \subsubsection{Responsibilities}
 The subsystem will be responsible for temperature control of the brewing process.
@@ -38,12 +33,10 @@ The subsystem will be responsible for temperature control of the brewing process
 
 
 \subsection{Pump Control System Elements Subsystem 2}
-This system will perform flow control from the Boiling Kettle to the Hot Liquor Tank. Like the Heating Elements the Pumps will be controlled by a relay that is receiving control signals from an ESP32.    
-
-
+This system will perform flow control from the Boiling Kettle to the Hot Liquor Tank. Like the Heating Elements, the Pumps will be controlled by a relay that is receiving control signals from an ESP32.    
 
 \subsubsection{Assumptions}
-The system will be designed were to achieve a desired brew you will only need this system to know when to turn on and off the pump from the Boiling Kettle to the Hot Liquor Tank.    
+The system will be designed to achieve a desired brew. You will only need this system to know when to turn on and off the pump from the Boiling Kettle to the Hot Liquor Tank.    
 
 \subsubsection{Responsibilities}
 The subsystem will be used for managing the pumping of liquid from the Boiling Kettle to the Hot Liquor Tank.
